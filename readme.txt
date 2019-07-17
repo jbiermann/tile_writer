@@ -1,5 +1,5 @@
 Slippy map tile generator for QGIS
-Version 0.2.2 2018-11-09
+Version 0.3
 Copyright 2018 Alexander Hajnal All rights reserved
 
 This software is released under the terms of the Version 3 of the GNU Affero 
@@ -52,6 +52,7 @@ Comments are welcome, you can email SLIPPYsoftware@alephnull.net
 
 Version history
 --------------------------------------------------------------------------------
+v0.3    adapted for QGIS 3 and Python 3 by JB
 v0.2.2  Clarified license, Corrected documentation, Added Github repository 
         (no code changes)
 v0.2.1  Documentation updates, added scale presets file (no code changes)
