@@ -1,9 +1,9 @@
-# tile_writer
-## Slippy map tile generator for QGIS
+# tile_writer3
+## Slippy map tile generator for QGIS3 and Python 3
 
 # About
 
-This program is a slippy map tile generator for use with QGIS. All rendering is
+This is clone of a slippy map tile generator for use with QGIS. It works the same as the original script, but the script has been updated to run with QGIS3 and Python3.  All rendering is
 done by QGIS so what you see on your screen is what you'll get in your output
 tiles. Functionally it is quite similar to the QTiles plugin.
 
@@ -59,7 +59,12 @@ globalmercator.py | For latitude/longitude to tile coordinate conversions (Taken
 ## Running the script:
 *   Place `tile_writer.py` and `globalmercator.py` into the same directory  
 (As packaged, this has already been done)
-*   In QGIS, open the Python console (`Plugins` &rarr; `Python Console`)
+*   Typically QGIS will fail to load `globalmercator.py`, you have two options to fix this:
+    *  Find out the Pyhton search path: in QGIS, open the Python console (`Plugins` &rarr; `Python Console`). Type in
+`import os
+`os.getcwd()
+and put `globalmercator.py` into the directory which os.getcwd() printed out
+    *   or uncomment the line `sys.path.append("/path/to/tilewriterdir")` and change the path to the directory which contains tile_writer.py and globalmercator.py.
 *   Click on the `Show editor` icon in the Python Console (middle icon)
 *   Load the `tile_writer.py` script using the `Open file` icon (top icon on the right)
 *   Define the map's area of interest:
@@ -168,30 +173,21 @@ These scales can be found in the `scales.xml` file and installed in QGIS using:
 # Version history
 | | |
 |-|-|
+| v0.3 | Fork of tile_writer to be compatible with QGIS3 and Python 3 |
 | v0.2.2 | Clarified license, Documentation updates and corrections, Added Github repository (no code changes) |
 | v0.2.1 | Documentation updates, added scale presets file (no code changes) |
 | v0.2   | Now supports both TMS and Google naming conventions |
 | v0.1   | Initial release |
 
 
-# Contact
-| | |
-|-|-|
-|Email:   | SLIPPYsoftware@alephnull.net  
-|         | (remove the type of map to get the real address) |
-|Website: | http://alephnull.net/software/gis/tile_writer.shtml |
-|Github:  | https://github.com/Alex-Kent/tile_writer |
-
-
 # Legalese
 **tile_writer**
-Version 0.2.2 2018-11-09  
+Version 0.3
+Original release by
 &copy; 2018 Alexander Hajnal All rights reserved
 
 This software is released under the terms of the Version 3 of the GNU Affero 
-General Public License.  See the `LICENSE` file for details.  Contact me via 
-email to negotiate licensing if you want to use this software under different a 
-license.
+General Public License.  See the `LICENSE` file for details.  
 
 
 # Warranty
